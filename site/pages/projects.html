@@ -27,13 +27,18 @@ and nav bar. always include nav bar -->
 <body>
     <header>
         <nav>
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="projects.html">My Projects</a></li>
-                <li><a href="resume.html">Resume</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+            <div class="nav-container">
+                <button class="hamburger" id="hamburgerMenu">
+                    &#9776; <!-- Hamburger menu icon -->
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
     <main>
@@ -106,5 +111,6 @@ and nav bar. always include nav bar -->
     <footer>
         <p>&copy; 2024 My Portfolio. All rights reserved.</p>
     </footer>
+    <script src="../js/main.js"></script>
 </body>
 </html>

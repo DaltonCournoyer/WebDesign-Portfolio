@@ -17,30 +17,40 @@ interactive javascript elements will be needed. maybe make a seperate one for ea
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="../css/main.css">
-    <script defer src="../js/main.js"></script>
 </head>
-<body>
-    <header class="hero">
-        <nav>
-            <ul>
-                <li><a href="home.html">Home</a></li>
+<header>
+    <nav>
+        <div class="nav-container">
+            <button class="hamburger" id="hamburgerMenu">
+                &#9776; <!-- Hamburger menu icon -->
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="home.html" class="active">Home</a></li>
                 <li><a href="about.html">About Me</a></li>
-                <li><a href="projects.html">My Projects</a></li>
+                <li><a href="projects.html">Projects</a></li>
                 <li><a href="resume.html">Resume</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-        </nav>
-        <div class="hero-content">
-            <h1>Welcome to My Portfolio</h1>
-            <p>Discover my projects, skills, and more!</p>
-            <button onclick="scrollToSection()">Learn More</button>
         </div>
-    </header>
-    <main>
-        <!-- Additional dynamic content -->
-    </main>
-    <footer>
-        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
-    </footer>
-</body>
+    </nav>
+</header>
+
+<main>
+    <section id="heroSection" class="hero-section">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Your journey to know me begins here!</p>
+        <button id="whoAmIButton">Who Am I?</button>
+        <div id="introTab" class="intro-tab">
+            <p>
+                Hi, I'm [Your Name], a passionate developer and lifelong learner. 
+                My journey in web development began with a curiosity for how websites work. 
+                Outside of coding, I enjoy hiking, reading, and experimenting with new technologies. 
+                Explore my portfolio to see how I turn ideas into reality!
+            </p>
+        </div>
+    </section>
+</main>
+<script src="../js/main.js"></script>
 </html>
+
+    

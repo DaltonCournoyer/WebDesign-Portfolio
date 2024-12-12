@@ -35,26 +35,93 @@ VALIDATION. VALIDATION. VALIDATION. ALL-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Information</title>
-    <!-- insert the css pages here -->
+    <title>Contact</title>
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
     <header>
-        <h1 id="main-title">Contact Form</h1>
+        <nav>
+            <div class="nav-container">
+                <button class="hamburger" id="hamburgerMenu">
+                    &#9776; <!-- Hamburger menu icon -->
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
-    <nav>
-    <a id="navicon" href="#"><img src="" alt=""></a> <!-- edit code later -->
-      <ul id="nav-list">
-        <li><a href="home.html">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="projects.html">My Projects</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <form class="contact-form" id="registrationForm">
-        <!-- insert contact information here -->
-    </form>
+    <main>
+        <section class="contact-intro">
+            <h1>Contact Me</h1>
+            <p>Feel free to reach out to me with any questions, collaboration ideas, or job opportunities. I'd love to hear from you!</p>
+        </section>
+
+        <section class="contact-form-section">
+            <h2>Get in Touch</h2>
+            <form id="contact-form" action="javascript:void(0);" method="post">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="company">Company:</label>
+                    <input type="text" id="company" name="company" placeholder="Your Company">
+                </div>
+
+                <div class="form-group">
+                    <label for="qualities">What qualities do you look for in candidates?</label>
+                    <textarea id="qualities" name="qualities" rows="4" placeholder="Your Response"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="technologies">Which technologies are most important for this role?</label>
+                    <div>
+                        <input type="checkbox" id="tech-html" name="technologies" value="HTML">
+                        <label for="tech-html">HTML</label>
+                        <input type="checkbox" id="tech-css" name="technologies" value="CSS">
+                        <label for="tech-css">CSS</label>
+                        <input type="checkbox" id="tech-js" name="technologies" value="JavaScript">
+                        <label for="tech-js">JavaScript</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="referral">How did you hear about me?</label>
+                    <div>
+                        <input type="radio" id="referral-linkedin" name="referral" value="LinkedIn">
+                        <label for="referral-linkedin">LinkedIn</label>
+                        <input type="radio" id="referral-website" name="referral" value="Website">
+                        <label for="referral-website">Website</label>
+                        <input type="radio" id="referral-other" name="referral" value="Other">
+                        <label for="referral-other">Other</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="availability">Preferred Date to Connect:</label>
+                    <input type="date" id="availability" name="availability">
+                </div>
+
+                <button type="submit" id="submit-button">Submit</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+    </footer>
+
     <script src="../js/contact.js"></script>
-  </body>
+    <script src="../js/main.js"></script>
+</body>
 </html>
