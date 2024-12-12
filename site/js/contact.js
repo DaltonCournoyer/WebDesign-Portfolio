@@ -1,5 +1,5 @@
 // outline:
-//      - validate elements based off a required ID. smart, right?
+//      - validate elements based off a required ID.
 //      - add validation for 
 
 document.getElementById('contact-form').addEventListener('submit', function(event) {

@@ -1,10 +1,3 @@
-function scrollToSection() {
-    window.scrollTo({
-        top: document.body.scrollHeight,
-        behavior: 'smooth'
-    });
-}
-
 // JavaScript to toggle the navigation menu
 document.getElementById('hamburgerMenu').addEventListener('click', () => {
     const navLinks = document.getElementById('navLinks');
@@ -53,17 +46,3 @@ document.getElementById('whoAmIButton').addEventListener('click', () => {
         }
     }
 });
-
-// Form validation example
-function validateContactForm() {
-    const form = document.getElementById('contact-form');
-    form.addEventListener('submit', (e) => {
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-
-        if (!name || !email) {
-            e.preventDefault();
-            alert('Please fill out all required fields!');
-        }
-    });
-}
