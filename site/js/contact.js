@@ -1,7 +1,3 @@
-// outline:
-//      - validate elements based off a required ID.
-//      - add validation for 
-
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("contact-form");
     const formError = document.getElementById("form-error");
