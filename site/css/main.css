@@ -310,6 +310,48 @@ button:not(.who-am-i-button) {
     color: #555;
 }
 
+/* CSS for hiding the project content */
+.project-content {
+    overflow: hidden;
+    height: auto; /* Set to auto initially, and change on hiding */
+    opacity: 1; /* Ensure content is visible initially */
+    transition: height 0.5s ease, opacity 0.5s ease, transform 0.5s ease-out; /* Add transition for height, opacity, and button move */
+}
+
+/* When content is hidden, set height to 0 and make it transparent */
+.project-content.hidden {
+    height: 0;
+    opacity: 0;
+}
+
+/* Button styling */
+.toggle-card-btn {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #388E3C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.5s ease-out; /* Slow down the glide */
+    position: relative;
+    z-index: 2; /* Ensure the button is above the content */
+}
+
+.toggle-card-btn:hover {
+    background-color: #2C6B2F;
+}
+
+/* Button glide up animation */
+.project-card .toggle-card-btn.glide-up {
+    transform: translateY(-20px); /* Moves the button upwards */
+}
+
+/* Button glide down animation */
+.project-card .toggle-card-btn.glide-down {
+    transform: translateY(0); /* Return the button to its original position */
+}
+
 /* Timeline Section */
 .timeline {
     padding: 50px;
@@ -445,32 +487,23 @@ input, textarea {
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-/* Invalid state (after validation) */
-input.invalid, textarea.invalid {
-    background-color: #ffe6e6; /* Light red */
-    border-color: #ff4d4d; /* Red */
-}
-
-/* Valid state (after validation) */
+/* Valid input field */
 input.valid, textarea.valid {
-    background-color: #e6ffe6; /* Light green */
-    border-color: #66cc66; /* Green */
+    background-color: #d4edda; /* Green background for valid */
+    border-color: #28a745
 }
 
-/* Error message styles */
+/* Invalid input field */
+input.invalid, textarea.invalid {
+    background-color: #f8d7da; /* Red background for invalid */
+    border-color: #dc3545;
+}
+
+/* Optional: Adding styles for error messages */
 .error-message {
     color: red;
     font-size: 0.9em;
     display: none;
-    margin-top: 5px;
-}
-
-/* Form error (general) */
-#form-error {
-    color: red;
-    font-weight: bold;
-    display: none;
-    margin-top: 15px;
 }
 
 .hidden {
@@ -500,16 +533,6 @@ input.valid, textarea.valid {
 .form-group label {
     font-size: 16px;
     margin-left: 5px; /* Ensures the label text has space after the checkbox */
-}
-
-/* For "Other" input group */
-.other-referral-input {
-    display: none; /* Initially hidden */
-    margin-top: 10px;
-}
-
-.other-referral-input input {
-    margin-top: 5px;
 }
 
 /* For the "checkbox-item" and "radio-item" if needed */

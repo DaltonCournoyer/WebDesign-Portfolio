@@ -64,32 +64,26 @@ VALIDATION. VALIDATION. VALIDATION. ALL-->
         <section class="contact-form-section">
             <h2>Get in Touch</h2>
             <form id="contact-form" action="javascript:void(0);" method="post">
-                <div id="form-error"></div>
-            
                 <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    <div class="error-message"></div>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Please enter your name (at least 3 characters)." required>
+                    <div class="error-message" id="name-error">Please enter a name with at least 3 characters.</div>
                 </div>
-            
                 <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="Your Email" required>
-                    <div class="error-message"></div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter a valid email address (e.g., example@domain.com)." required>
+                    <div class="error-message" id="email-error">Please enter a valid email address (e.g., example@domain.com).</div>
                 </div>
-            
                 <div class="form-group">
-                    <label for="company">Company:</label>
-                    <input type="text" id="company" name="company" placeholder="Your Company">
-                    <div class="error-message"></div>
+                    <label for="company">Company</label>
+                    <input type="text" id="company" name="company" placeholder="Please enter your company's name (at least 5 characters)."required>
+                    <div class="error-message" id="company-error">Please enter a company name with at least 5 characters.</div>
                 </div>
-            
                 <div class="form-group">
-                    <label for="qualities">What qualities do you look for in candidates?</label>
-                    <textarea id="qualities" name="qualities" rows="4" placeholder="Your Response"></textarea>
-                    <div class="error-message"></div>
+                    <label for="qualities">Qualities</label>
+                    <textarea id="qualities" name="qualities" placeholder="Describe your qualities using atleast 50 characters." required></textarea>
+                    <div class="error-message" id="qualities-error">Please describe at least 50 characters.</div>
                 </div>
-            
                 <div class="form-group">
                     <label for="technologies">Which technologies are most important for this role?</label>
                     <div>
@@ -102,19 +96,18 @@ VALIDATION. VALIDATION. VALIDATION. ALL-->
                     </div>
                     <div class="error-message"></div>
                 </div>
-            
                 <div class="form-group">
                     <label for="referral">How did you hear about me?</label>
                     <div>
                         <input type="radio" id="referral-linkedin" name="referral" value="LinkedIn">
                         <label for="referral-linkedin">LinkedIn</label>
-                        <input type="radio" id="referral-website" name="referral" value="Website">
-                        <label for="referral-website">Website</label>
+                        <input type="radio" id="referral-github" name="referral" value="GitHub">
+                        <label for="referral-github">GitHub</label>
                         <input type="radio" id="referral-other" name="referral" value="Other">
                         <label for="referral-other">Other</label>
                     </div>
+                    <div class="error-message" id="referral-error">Please select a referral source.</div>
                 </div>
-            
                 <div class="form-group">
                     <label for="availability">Preferred Date to Connect:</label>
                     <input type="date" id="availability" name="availability">
@@ -122,6 +115,7 @@ VALIDATION. VALIDATION. VALIDATION. ALL-->
                 </div>
             
                 <button type="submit" id="submit-button">Submit</button>
+                <div id="form-error" class="error-message"></div>
             </form>
         </section>
     </main>

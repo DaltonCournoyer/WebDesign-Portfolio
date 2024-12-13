@@ -83,4 +83,41 @@ document.addEventListener('DOMContentLoaded', () => {
         tiltContainer.addEventListener('mousemove', handleMouseMove);
         tiltContainer.addEventListener('mouseleave', resetTilt);
     }
+
+    if (window.location.pathname === '/site/pages/projects.html')
+    {
+        // Get all buttons with the class "toggle-card-btn"
+        const toggleButtons = document.querySelectorAll(".toggle-card-btn");
+
+        // Add event listeners for each button
+        toggleButtons.forEach(button => {
+            button.addEventListener("click", function() {
+                // Get the parent card of the clicked button (i.e., the project card)
+                const projectCard = button.closest(".project-card");
+                
+                // Toggle the "hidden" class to hide/show the project content
+                const projectContent = projectCard.querySelector(".project-content");
+                const isHidden = projectContent.classList.contains("hidden");
+                
+                // Add or remove the "glide-up" and "glide-down" classes based on visibility
+                if (isHidden) {
+                    button.classList.remove("glide-up");  // Ensure the button is back to original position
+                    button.classList.add("glide-down");   // Move the button back down when showing content
+                } else {
+                    button.classList.remove("glide-down");  // Ensure the button starts moving upwards
+                    button.classList.add("glide-up");       // Move the button up when hiding content
+                }
+
+                // Apply the hidden class to the content to trigger the transition
+                projectContent.classList.toggle("hidden");
+                
+                // Change the button text based on the card's visibility
+                if (isHidden) {
+                    button.textContent = "Hide Project";  // Change button text to "Hide"
+                } else {
+                    button.textContent = "Show Project";  // Change button text to "Show"
+                }
+            });
+        });
+    }
 });
