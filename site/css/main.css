@@ -104,20 +104,6 @@ nav {
     font-size: 1.2em;
 }
 
-button {
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    max-width: 50%;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-button:hover {
-    background: darkgreen;
-}
-
 /* Hero Section */
 .hero-section {
     position: relative;
@@ -159,6 +145,10 @@ button:hover {
     transform: scale(1.1);
 }
 
+button:not(.who-am-i-button) {
+    width: 100%
+}
+
 /* About Me Page Styling */
 
 .about-me {
@@ -180,11 +170,28 @@ button:hover {
     margin: 0 auto;
 }
 
+.tilt-container {
+    display: inline-block;
+    perspective: 1000px;
+    width: 300px; /* Optional: Set a size for the container */
+    height: 300px;
+}
+
 .profile-pic {
-    width: 150px;
-    height: 150px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     margin-bottom: 20px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.1s ease-out, box-shadow 0.3s ease;
+    transform-origin: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.tilt-container:hover .profile-pic {
+    transform: scale(1.10) rotateX(10deg) rotateY(10deg); /* Tilt effect */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 8); /* Add some depth with a shadow */
 }
 
 .about-text {
@@ -214,15 +221,21 @@ button:hover {
 .hobby-card {
     background-color: #f4f4f4;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     text-align: center;
+    transition: transform 0.2s;
     padding: 20px;
+}
+
+.hobby-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
 }
 
 .hobby-card img {
     width: 100%;
-    height: 150px;
-    object-fit: cover;
+    height: 300px;
+    object-fit: contain;
     border-radius: 10px 10px 0 0;
 }
 
@@ -262,7 +275,7 @@ button:hover {
 .project-card {
     background-color: #f4f4f4;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     transition: transform 0.2s;
     text-align: center;
@@ -271,6 +284,7 @@ button:hover {
 
 .project-card:hover {
     transform: scale(1.05);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
 }
 
 .project-card img {
@@ -402,9 +416,9 @@ input[type="radio"] {
     margin-right: 10px;
 }
 
-button {
+button:not(.hamburger) {
     display: block;
-    width: 100%;
+    transition: transform 0.2s ease-out;
     padding: 10px;
     background-color: #4CAF50;
     color: white;
@@ -414,13 +428,102 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+button:hover:not(.hamburger) {
     background-color: #45a049;
+    transform: scale(1.05);
 }
 
 button:focus {
     outline: none;
     box-shadow: 0 0 3px 2px #4CAF50;
+}
+
+/* Default field styles (untouched state) */
+input, textarea {
+    background-color: white;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Invalid state (after validation) */
+input.invalid, textarea.invalid {
+    background-color: #ffe6e6; /* Light red */
+    border-color: #ff4d4d; /* Red */
+}
+
+/* Valid state (after validation) */
+input.valid, textarea.valid {
+    background-color: #e6ffe6; /* Light green */
+    border-color: #66cc66; /* Green */
+}
+
+/* Error message styles */
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    display: none;
+    margin-top: 5px;
+}
+
+/* Form error (general) */
+#form-error {
+    color: red;
+    font-weight: bold;
+    display: none;
+    margin-top: 15px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* General styling for form groups */
+.form-group {
+    margin-bottom: 20px; /* Adds space between form groups */
+}
+
+/* Style for input[type="checkbox"] and input[type="radio"] */
+.form-group input[type="checkbox"],
+.form-group input[type="radio"] {
+    margin: 0 5px 0 0; /* Adds margin only to the right to give space between the checkbox and label */
+    vertical-align: middle; /* Aligns the checkbox/radio with the text */
+}
+
+/* Flexbox for vertically aligning items inside the div */
+.form-group div {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    gap: 10px; /* Adds spacing between each item (checkbox/radio) */
+}
+
+/* Labels for checkboxes/radio buttons */
+.form-group label {
+    font-size: 16px;
+    margin-left: 5px; /* Ensures the label text has space after the checkbox */
+}
+
+/* For "Other" input group */
+.other-referral-input {
+    display: none; /* Initially hidden */
+    margin-top: 10px;
+}
+
+.other-referral-input input {
+    margin-top: 5px;
+}
+
+/* For the "checkbox-item" and "radio-item" if needed */
+.checkbox-item,
+.radio-item {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Space between checkbox/radio and the label */
+}
+
+/* To make sure the input fields align properly */
+.checkbox-item input,
+.radio-item input {
+    margin-right: 10px;
 }
 
 /* Media Queries for Navbar and the such */

@@ -1,1 +1,47 @@
 /* Use resume specific css - this will be beneficial for the print button exclusively, I guess */
+
+/* Print-Specific Styles */
+@media print {
+    /* Hide Navigation Bar */
+    nav {
+        display: none;
+    }
+
+    /* Hide Print Button */
+    .print-button {
+        display: none;
+    }
+
+    /* Adjust margins for printing */
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .resume-section {
+        margin: 20px;
+        font-size: 12pt;
+    }
+
+    footer {
+        display: none;
+    }
+}
+
+/* Media queries to make the resume pop a bit more when not small-screened */
+@media screen and (min-width: 769px) {
+    main {
+        font-size: 120%;
+        justify-items: center;
+    }
+
+    .print-button-container {
+        position: relative;       /* Position relative to the viewport */
+        left: 50%;                /* Move the container 50% from the left edge of the viewport */
+        transform: translateX(-50%); /* Move the container back by 50% of its width to center it */         /* Optional: Adjust the bottom spacing from the viewport */
+    }
+
+    .print-button {
+        width: 400px;
+    }
+}

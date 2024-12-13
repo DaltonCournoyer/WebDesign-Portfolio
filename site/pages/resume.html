@@ -67,10 +67,12 @@ tl;dr for my poor future self...
     <main>
         <section class="resume-header">
             <h1>My Resume</h1>
-            <button id="print-button">Print Resume</button>
+            <div class="print-button-container">
+                <button id="printButton" class="print-button" onclick="printResume()">Print Resume</button>
+            </div>
         </section>
-
-        <section class="resume-content">
+        
+        <section class="resume-section">
             <article>
                 <h2>Education</h2>
                 <ul>
@@ -89,16 +91,10 @@ tl;dr for my poor future self...
                 <h2>Work Experience</h2>
                 <ul>
                     <li>
-                        <strong>Intern - Web Development</strong> (Summer 2023)<br>
-                        DEF Tech Solutions<br>
-                        - Assisted in developing and maintaining responsive web applications.<br>
-                        - Collaborated with a team to design user-friendly interfaces using HTML, CSS, and JavaScript.
-                    </li>
-                    <li>
-                        <strong>Part-Time IT Support</strong> (2021–2022)<br>
-                        GHI Solutions<br>
-                        - Provided technical support to end-users and resolved hardware/software issues.<br>
-                        - Streamlined internal ticketing system to improve issue resolution time.
+                        <strong>City Band Member</strong> (Summer 2024)<br>
+                        Wisconsin Rapids City Band<br>
+                        - Participated as part of a city-wide organization.<br>
+                        - Developed interpersonal skills in a communicative environment.
                     </li>
                 </ul>
             </article>
@@ -106,24 +102,24 @@ tl;dr for my poor future self...
             <article>
                 <h2>Skills</h2>
                 <ul class="skills-list">
-                    <li><strong>Hard Skills:</strong> </li>
-                    <li><strong>Soft Skills:</strong> Communication, Time Management, Teamwork</li>
+                    <li><strong>Hard Skills:</strong> Computer Programming, Spreadsheets, Writing</li>
+                    <li><strong>Soft Skills:</strong> Problem Solving, Adaptability, Innovativity</li>
                 </ul>
             </article>
 
             <article>
                 <h2>Certifications</h2>
                 <ul>
-                    <li>Responsive Web Design - freeCodeCamp</li>
-                    <li>JavaScript Algorithms and Data Structures - freeCodeCamp</li>
+                    <li>CPR Certification - National CPR Foundation</li>
+                    <li>Microsoft Office Specialist Certification - Microsoft</li>
                 </ul>
             </article>
 
             <article>
                 <h2>Achievements</h2>
                 <ul>
-                    <li></li>
-                    <li>Hackathon Winner - ABC Coding Competition (2023)</li>
+                    <li>Graduated With Honors - Lincoln High School</li>
+                    <li>Received Scholarships - Mid-State Technical College</li>
                 </ul>
             </article>
         </section>
@@ -132,5 +128,10 @@ tl;dr for my poor future self...
         <p>&copy; 2024 My Portfolio. All rights reserved.</p>
     </footer>
     <script src="../js/main.js"></script>
+    <script>
+        function printResume() {
+        window.print();
+    }
+    </script>
 </body>
 </html>

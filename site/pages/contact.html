@@ -64,26 +64,32 @@ VALIDATION. VALIDATION. VALIDATION. ALL-->
         <section class="contact-form-section">
             <h2>Get in Touch</h2>
             <form id="contact-form" action="javascript:void(0);" method="post">
+                <div id="form-error"></div>
+            
                 <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <div class="error-message"></div>
                 </div>
-
+            
                 <div class="form-group">
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    <div class="error-message"></div>
                 </div>
-
+            
                 <div class="form-group">
                     <label for="company">Company:</label>
                     <input type="text" id="company" name="company" placeholder="Your Company">
+                    <div class="error-message"></div>
                 </div>
-
+            
                 <div class="form-group">
                     <label for="qualities">What qualities do you look for in candidates?</label>
                     <textarea id="qualities" name="qualities" rows="4" placeholder="Your Response"></textarea>
+                    <div class="error-message"></div>
                 </div>
-
+            
                 <div class="form-group">
                     <label for="technologies">Which technologies are most important for this role?</label>
                     <div>
@@ -94,8 +100,9 @@ VALIDATION. VALIDATION. VALIDATION. ALL-->
                         <input type="checkbox" id="tech-js" name="technologies" value="JavaScript">
                         <label for="tech-js">JavaScript</label>
                     </div>
+                    <div class="error-message"></div>
                 </div>
-
+            
                 <div class="form-group">
                     <label for="referral">How did you hear about me?</label>
                     <div>
@@ -107,12 +114,13 @@ VALIDATION. VALIDATION. VALIDATION. ALL-->
                         <label for="referral-other">Other</label>
                     </div>
                 </div>
-
+            
                 <div class="form-group">
                     <label for="availability">Preferred Date to Connect:</label>
                     <input type="date" id="availability" name="availability">
+                    <div class="error-message"></div>
                 </div>
-
+            
                 <button type="submit" id="submit-button">Submit</button>
             </form>
         </section>
